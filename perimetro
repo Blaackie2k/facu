@@ -1,0 +1,46 @@
+/*
+Crear una funci�n o procedimiento que calcule el per�metro y la superficie de un cuadrado y un rombo.
+Considerar que el usuario ingresa los datos necesarios para los c�lculos.
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+#include<wchar.h>
+#include<locale.h>
+#include<time.h>
+
+float Perimetro();
+
+float Perimetro(){
+    float lado;
+        puts("El lado mide: ");
+        scanf("%f",&lado);
+
+        return (lado*4);
+}
+
+int main()
+{
+    float res1, res2;
+
+    setlocale(LC_ALL, "");
+    srand(time(NULL));
+
+    puts("**********");
+    puts("Ingrese a continuacion los datos del cuadrado");
+
+    res1 = Perimetro();
+
+    printf("El perimetro del cuadrado es de: %.1f\n",res1);
+
+    puts("**********");
+    puts("Ingrese a continuacion los datos del rombo");
+
+    res2 = Perimetro();
+
+    printf("El perimetro del rombo es de: %.1f\n",res2);
+    puts("**********");
+    system("pause");
+
+    return 0;
+}
