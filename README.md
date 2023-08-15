@@ -1,2 +1,3 @@
 # facu
-tps de practica/facultad
+@exealaniz09
+exealaniz09@gmail.com
