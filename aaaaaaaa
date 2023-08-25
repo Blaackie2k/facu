@@ -1,0 +1,137 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+void llenar(int i, int j, float emp[][j]){
+    float is=3.1,renta=9.3;
+    float c=0;
+    float n1=6.4, n2=13.94, n3=21.04;
+        system("cls");
+//matriz
+        puts("");
+        puts("Bienvenido al sistema de sueldos");
+
+    for (i=0;i<1;i++){
+
+        for (j=0;j<8;j++){
+        printf("\n EMPLEADO: %d ", j+1);
+        emp[i][j]=100;
+        printf ("[%1.f]\t", emp[i][j] );
+
+        }
+        puts("");
+}
+        puts("Para ingresar al sector de niveles por favor pulse cualquier boton..");
+        puts("");
+        system("pause");
+        puts("Ingresando...");
+        system("cls");
+        puts("Cargando .....");
+        puts("");
+        system("cls");
+        puts("Bienvenido al sector nivel, por favor ingrese el nivel de cada empleado");
+        puts("le recordamos que el sistema de nivel es de (0-3)");
+    for (i=1;i<2;i++){
+        for (j=0;j<8;j++){
+        puts("");
+        printf("ingrese el nivel del empleado %d\n",j+1);
+        scanf("%f",&emp[i][j]);
+
+        while(emp[i][j]<0 | emp[i][j]>3 ){
+            puts("los niveles solo van del 0 al 3");
+            scanf("%f",&emp[i][j]);
+        }
+        }
+}
+        system("cls");
+        puts("DATOS CARGADOS");
+        puts("Por favor pulse un boton para continuar");
+        system("pause");
+        system("cls");
+
+for (i=0;i<5;i++){
+        for (j=0;j<8;j++){
+       printf ("[%.f]\t", emp[i][j] );
+        }
+        puts("");
+    }
+        puts("DESCUENTOS ISSS");
+     for (i=2;i<3;i++){
+
+        for (j=0;j<8;j++){
+        emp[i][j]=(100-(is*emp[0][j])/100);
+        printf ("[%.1f]\t", emp[i][j] );
+
+        }
+        puts("");
+}
+        puts("Descuento renta");
+    for (i=2;i<3;i++){
+
+        for (j=0;j<8;j++){
+        emp[i][j]=(100-(renta*emp[0][j])/100);
+        printf ("[%.1f]\t", emp[i][j] );
+
+        }
+        puts("");
+}
+for (i=0;i<5;i++){
+        for (j=0;j<8;j++){
+       printf ("[%.1f]\t", emp[i][j] );
+        }
+        puts("");
+    }
+for (i=3; i<4; i++) {
+   for (j=0; j<8; j++) {
+    c=c+1;
+    if (emp[1][j] == 0) {
+        emp[3][j] = (emp[2][j] + 7);
+        printf("- Sueldo final del empleado %.f [ NIVEL (%.f)] es de : %.1f$\n\n",c,emp[1][j],emp[3][j]);
+    }
+    if (emp[1][j] == 1) {
+        emp[3][j] = emp[2][j]+(emp[2][j]*(n1/100));
+        printf("- Sueldo final del empleado %.f [ NIVEL (%.f)] es de : %.1f$\n\n",c,emp[1][j],emp[3][j]);
+
+    }
+    if (emp[1][j] == 2) {
+        emp[3][j] = emp[2][j]+(emp[2][j]*(n2/100));
+        printf("- Sueldo final del empleado %.f [ NIVEL (%.f)] es de : %.1f$\n\n",c,emp[1][j], emp[3][j]);
+         // descuento del 11,4 por seguro de vida
+    }
+    if (emp[1][j] == 3) {
+        emp[3][j] = emp[2][j]+(emp[2][j]*(n3/100));
+        printf("- Sueldo final del empleado %.f [ NIVEL (%.f)] es de : %.1f$\n\n",c,emp[1][j], emp[3][j]);
+        // descuento del 11,4 por seguro de vida
+    }
+     }
+}
+
+
+
+
+}
+
+int main()
+
+{
+ srand(time(NULL));
+
+ int emp[5][8];
+ int i,j,op;
+    puts("Bienvenido a LA CONSTANSA S.A");
+    puts("");
+    puts("Este es el sistema de sueldos de la empresa.");
+    puts("");
+    puts("Todos los empleados tienen un sueldo base de 100 USD");
+    puts("");
+    puts("Vamos a solicitarle que ingrese el nivel de cada empleado (0-4)");
+    puts("");
+    puts("Luego se le aplicara los descuentos y bonos dependiendo el nivel del empleado");
+    puts("");
+    puts("pulse una tecla para continuar");
+    system("pause");
+ llenar( 5, 8, emp[5][8]);
+
+
+
+    return 0;
+}
